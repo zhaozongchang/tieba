@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+//让表单居中
+ .col-centered {
+
+  float: none;
+
+  margin: 0 auto;
+
+}
