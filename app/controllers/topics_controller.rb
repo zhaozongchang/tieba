@@ -62,6 +62,18 @@ class TopicsController < ApplicationController
     end
   end
 
+  def upvote
+    @topic = Topic.find(params[:id])
+    @topic.upvote_by current_user
+    redirect_to :back
+  end
+
+  def downvote
+    @topic = Topic.find(params[:id])
+    @topic.downvote_by current_user
+    redirect_to :back
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_topic

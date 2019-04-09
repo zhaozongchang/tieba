@@ -6,7 +6,7 @@
       <tr>
         <th>Title</th>
         <th>Description</th>
-        <th >操作选项</th>
+        <th colspan = "3">操作选项</th>
       </tr>
     </thead>
 
@@ -19,6 +19,14 @@
             <% if current_user && current_user == topic.user %>
               <%= link_to 'Edit', edit_topic_path(topic), class: "btn btn-sm btn-default" %>
               <%= link_to 'Destroy', topic, class: "btn btn-sm btn-default", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to like_topic_path(topic), method: :put do %>
+             <i class="fa fa-thumbs-o-up " style="font-size:14px"></i>（<%= topic.get_upvotes.size %>）
+            <% end %>
+            <%= link_to dislike_topic_path(topic), method: :put do %>
+             <i class="fa fa-thumbs-o-down pi-thumbs-down" style="font-size:14px"></i>（<%= topic.get_downvotes.size%>）
             <% end %>
           </td>
         </tr>

@@ -1,3 +1,4 @@
 class Topic < ApplicationRecord
-  belongs_to :user 
+  acts_as_votable
+  belongs_to :user
 end

@@ -3,7 +3,7 @@
     <div class="form-group">
       <%= f.input :title, class: "form-control" %>
       <%= f.input :description,class: "form-control" %>
-      <%= f.submit "Submit", class: "btn btn-lg btn-primary" %>
+      <%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submiting..." } %>
     </div>
   <% end %>
 </div>
