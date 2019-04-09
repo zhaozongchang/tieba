@@ -20,3 +20,20 @@
     </tbody>
   </table>
 </div>
+
+<div class="col-md-8 col-centered">
+  <h3 class="comments_title">
+     评论(<%= @topic.comments.count %>)
+  </h3>
+
+  <div id="comments">
+    <%= render @topic.comments %>
+  </div>
+  <%= simple_form_for [@topic, Comment.new]  do |f| %>
+  <div class="field">
+    <%= f.input :body, class: "form-control" %>
+  </div>
+  <br>
+  <%= f.submit "评论", class: "btn btn-primary" %>
+  <% end %>
+</div>
